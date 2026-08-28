@@ -46,4 +46,9 @@ class Article extends Model implements HasMedia
     {
         return $this->belongsToMany(Tag::class);
     }
+
+    public function savedByUsers()
+    {
+        return $this->belongsToMany(User::class, 'article_user')->withTimestamps();
+    }
 }
